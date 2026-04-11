@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+/* TradeX-style B2B palette — teal primary, navy heroes, mint surfaces, #F5F7F9 canvas */
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Grotesk", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-tx-teal: #007a86;
+  --color-tx-teal-dark: #005f6b;
+  --color-tx-teal-hover: #006974;
+  --color-tx-navy: #00334e;
+  --color-tx-navy-mid: #004a5c;
+  --color-tx-mint: #e6f4f1;
+  --color-tx-mint-soft: #f0faf5;
+  --color-tx-canvas: #f5f7f9;
+  --color-tx-border: #e0e0e0;
+}
+
+body {
+  font-family: var(--font-sans);
+  @apply bg-tx-canvas text-slate-900 min-h-dvh;
+}
+
+/* Subtle mint wash on canvas */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 100% 60% at 50% -20%, rgb(230 244 241 / 0.65), transparent 55%),
+    linear-gradient(180deg, rgb(245 247 249) 0%, rgb(245 247 249) 100%);
+  pointer-events: none;
+}
